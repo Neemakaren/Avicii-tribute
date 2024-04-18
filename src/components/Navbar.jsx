@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import NavForm from './NavForm';
 import { ProductsArray } from '../ProductsStore';
+import { FaSpotify, FaYoutube, FaApple } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -26,7 +27,8 @@ const Navbar = () => {
 		);
 	};
   return (
-    <nav className="container mx-auto px-2 z-10">
+    // <nav className="container mx-auto px-2 mt-16 w-full">
+    <nav className="lg:px-16 mx-auto px-2 mt-10 w-full bg-black">
     
     <div className="flex-start flex items-center justify-between ">
       
@@ -34,20 +36,20 @@ const Navbar = () => {
         <img src={img} alt="" className='fill-current bg-black w-[5em]' />
       </div>
       
-      <div className="hidden space-x-6 md:flex text-white">
+      <div className="hidden sm:hidden space-x-6 md:flex text-white">
         <li to='/' className="hover:text-darkGrayishBlue">TIM BERGLING FOUNDATION</li>
         <li to='/jobsec' className="hover:text-darkGrayishBlue">AVICII EXPERIENCE</li>
         <li to='/uploadjob' className="hover:text-darkGrayishBlue">JOIN THE COMMUNITY</li>
         <li to='/blogpage'className="hover:text-darkGrayishBlue" >SHOP</li>
       </div>
 
-      <div className='flex text-2xl space-x-3'>
-                <TbBrandSpotify className='fill-current text-white' />
-                <CiYoutube className='fill-current text-white'/>
-                <RiAppleLine className='fill-current text-white'/>
+      <div className='flex text-[1.2em] space-x-6'>
+                <FaSpotify className='fill-current text-white' />
+                <FaYoutube className='fill-current text-white'/>
+                <FaApple className='fill-current text-white'/>
           </div>
       
-      <button className='flex flex-row items-center justify-center text-2xl cursor-pointer transition-all duration-0.3 linear md:hidden  lg:hidden text-slate-900 text-white' onClick={() => setIsOpen((prev) => !prev)}>
+      <button className='flex flex-row items-center justify-center text-2xl cursor-pointer transition-all duration-0.3 linear md:hidden  lg:hidden  text-slate-900 text-white' onClick={() => setIsOpen((prev) => !prev)}>
             {isOpen ? <AiOutlineClose size={26} /> : <HiMenuAlt3 size={26} />}
           </button>
           
